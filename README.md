@@ -1,4 +1,4 @@
-# Monte Carlo simulation and Geometric Brownian Motion for Simulating Stock price dynamics
+# Geometric Brownian Motion & Monte Carlo simulation and for simulating Stock price dynamics
 * The purpose of this project is to quantify and vizualize the uncertainty and randomness inherent in stock price movement.
 
 ## References:
