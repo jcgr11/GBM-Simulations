@@ -52,9 +52,9 @@ and:
 * $\sigma\sqrt{dt}\cdot Z$  represents the random component of the log price change.
 
 This recursive form of the GBM SDE is derived by discretizing the SDE using the Euler-Maruyama method, which approximates the stochastic differential equation by a difference equation.
-* What is a difference equation? A difference equation is a mathematical equation that describes a sequence of values in terms of the values that precede it.
+* Note: A difference equation is a mathematical equation that describes a sequence of values in terms of the values that precede it.
 
-* How do we use Euler discretization to discretize the GBM SDE: $dS(t) = μS(t)dt + σS(t)dW(t)$?
+* Euler discretization to discretize the GBM SDE: $dS(t) = μS(t)dt + σS(t)dW(t)$
 
 * Start by defining the Wiener process increment $dW(t)$ as a standard normal random variable times the square root of the time step $dt$:
 $$dW(t) = \sqrt{dt}\cdot Z$$
@@ -82,11 +82,11 @@ $$\mu S(t) dt = \mu S(t) dt - \frac{1}{2}\sigma^2 S(t) dt + \frac{1}{2}\sigma^2 
 
 $$= (\mu - \frac{1}{2}\sigma^2) S(t) dt + \frac{1}{2}\sigma^2 S(t) dt$$
 
-* So, we can rewrite the discretized equation as:
+* So, the discretized equation can be rewritten as:
 
 $$S(t+dt) = S(t) + (\mu - \frac{1}{2}\sigma^2) S(t) dt + \sigma S(t) \sqrt{dt} Z$$
 
-* Finally, we can simplify this expression by factoring out $S(t)$:
+* Finally, this expression can be simplified by factoring out $S(t)$:
 
 $$S(t+dt) = S(t) \left(1 + (\mu - \frac{1}{2}\sigma^2) dt + \sigma \sqrt{dt} Z \right)$$
 * which is equivalent to:
