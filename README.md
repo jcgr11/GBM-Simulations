@@ -32,7 +32,7 @@ where:
 
 In this case W(t) is simulated using using a simple Monte Carlo simulation by generating a series normally distrubted random numbers which are used to update the state of the stochastic process at each time step, although not an exact weiner process the simulation will have similar properties such as a continuous and unpredicatable path at each time step.
 
-### The derivation of the recursive form of the GBM SDE used in this model:
+### The derivation of the recursive form of the GBM SDE (shown below) using Euler-Maruyama's Discretization:
 <p align="center">
 $$S(t+dt)=S(t)\cdot\exp\left((\mu-\frac{1}{2}\sigma^2)dt+\sigma\sqrt{dt}\cdot Z\right)$$
 </p>
@@ -54,21 +54,21 @@ and:
 This recursive form of the GBM SDE is derived by discretizing the SDE using the Euler-Maruyama method, which approximates the stochastic differential equation by a difference equation.
 * Note: A difference equation is a mathematical equation that describes a sequence of values in terms of the values that precede it.
 
-* Euler discretization to discretize the GBM SDE: $dS(t) = μS(t)dt + σS(t)dW(t)$
+#### Euler discretization to discretize the GBM SDE: $dS(t) = μS(t)dt + σS(t)dW(t)$
 
 * Start by defining the Wiener process increment $dW(t)$ as a standard normal random variable times the square root of the time step $dt$:
 $$dW(t) = \sqrt{dt}\cdot Z$$
 where Z is a standard normal random variable.
 
 * Then, approximate the change in $S(t)$ over the time step dt as:
-$$dS(t) = μS(t)dt + σS(t)dW(t)$$
+$$dS(t) = μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$$
 This is the same as the original SDE, but with $dW(t)$ replaced by our approximation from step 1.
 
 Rearrange the terms in the above equation to isolate $S(t + dt)$:
 
-* $dS(t) = \mu S(t) dt + \sigma S(t) \sqrt{dt} Z$
-* $\frac{dS(t)}{S(t)} = \mu dt + \sigma \sqrt{dt} Z$
-* $\frac{dS(t)}{S(t)} - \mu dt = \sigma \sqrt{dt} Z$
+* Start with the Original SDE where $\sqrt{dt} Z$ is used to estimate dW(t)$: $$dS(t) = \mu S(t) dt + \sigma S(t) \sqrt{dt} Z$$
+* Divide both side by $S(t)$: $$\frac{dS(t)}{S(t)} = \mu dt + \sigma \sqrt{dt} Z$$
+* Subtract both sides by $\mu dt$: $$\frac{dS(t)}{S(t)} - \mu dt = \sigma \sqrt{dt} Z$$
 * $d\ln(S(t)) - \mu dt = \sigma \sqrt{dt} Z$
 * $\ln(S(t+dt)) - \ln(S(t)) = \mu dt + \sigma \sqrt{dt} Z$
 * $\ln(S(t+dt)) = \ln(S(t)) + \mu dt + \sigma \sqrt{dt} Z$
