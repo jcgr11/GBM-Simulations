@@ -39,7 +39,7 @@ where:
 * $σ$, (diffusion), is the volatility of the asset
 * $W(t)$ is a Wiener process, which is a mathematical representation of Brownian motion
 
-In this case W(t) is simulated using using a simple Monte Carlo simulation by generating a series normally distrubted random numbers which are used to update the state of the stochastic process at each time step. Although not an exact weiner process, the simulation will have similar properties such as a continuous and unpredicatable path at each time step.
+In this case $W(t)$ is simulated using using a simple Monte Carlo simulation by generating a series normally distrubted random numbers which are used to update the state of the stochastic process at each time step. Although not an exact weiner process, the simulation will have similar properties such as a continuous and unpredicatable path at each time step.
 
 ### The derivation of the recursive form of the GBM SDE (shown below) using Euler-Maruyama's Discretization:
 <p align="center">
