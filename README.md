@@ -61,12 +61,12 @@ To obtain the recursive form, we need to solve the SDE. One way to do this is to
 Below are the steps of Euler-Maruyama Discretization:
 
 1. Discretize time into small intervals of length dt. We want to find the value of $S$ at time $t+dt$, given the value of $S$ at time $t$. We can write: $$S(t+dt) = S(t) + dS(t)$$
-2. Substitute the SDE for dS(t): $$dS(t) = μS(t)dt + σS(t)dW(t)$$
+2. Substitute the SDE for dS(t): $$S(t+dt) = S(t) + μS(t)dt + σS(t)dW(t)$$
 3. Approximate the increment $dW(t)$ using a normal distribution with mean $0$ and variance $dt$: $$dW(t) \approx N(0,dt)$$
 4. Define a standard normal random variable $Z$ as:
 $$Z \approx N(0,1)$$
-5. Rewrite the equation using $dW(t) = sqrt(dt)\cdot Z$: $$dS(t) = μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$
-6. Use the fact that $Z$ is normally distributed to obtain: $$dS(t) \approx μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$
+5. Rewrite the equation using $dW(t) = sqrt(dt)\cdot Z$: $$S(t+dt) = S(t) + μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$
+6. Use the fact that $Z$ is normally distributed to obtain: $$S(t+dt) = S(t) + μS(t)dt + σS(t)\sqrt{dt}\cdot Z \approx S(t)\cdot\left(1 + μdt + σ\sqrt{dt}\cdot Z\right)$$
 7. Finally, exponentiate both sides of the equation to obtain the recursive form of the GBM: $$S(t+dt)=S(t)\cdot\exp\left((\mu-\frac{1}{2}\sigma^2)dt+\sigma\sqrt{dt}\cdot Z\right)$$
 
 The final equation is the discrete approximation to the original GBM SDE, using the Euler-Maruyama method. It tells us that the predicted stock price after a small time interval $dt$, $S(t + dt)$, can be obtained by multiplying the current stock price $S(t)$ by a random factor $\exp \left( (\mu - \frac{1}{2}\sigma^2) dt + \sigma \sqrt{dt} Z \right)$, where $Z$ is a standard normal random variable. This random factor captures the stochastic fluctuations in the stock price due to the Wiener process $dW(t)$.
