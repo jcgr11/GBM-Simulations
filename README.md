@@ -1,5 +1,7 @@
 # Monte Carlo simulation for stock price dynamics using a recursive form of the Geometric Brownian Motion SDE
-* The purpose of this project is to quantify and vizualize the uncertainty and randomness inherent in stock price movement.
+The aim of this project is to develop a quantitative model that can measure and visualize the inherent uncertainty and randomness in the movement of stock prices. By analyzing the fluctuations in the market, the model provides valuable insights that can assist in evaluating the behavior of securities and forming well-supported hypotheses around future actions that could be taken.
+
+It should be emphasized that the model is not intended to predict the future movement of stock prices with complete accuracy, but rather to provide probabilistic estimates that can inform decision-making. As with any quantitative model, the accuracy of the output is subject to the quality and quantity of the input data, as well as the assumptions and limitations of the model itself. Therefore, it is important to approach the model's outputs with a healthy degree of skepticism and critical thinking, and to use it in combination with other sources of information and expertise.
 
 ## References:
 * Geometric brownian motion. (n.d.). https://www.quantstart.com/articles/Geometric-Brownian-Motion/
@@ -15,9 +17,13 @@ Geometric Brownian Motion is a continuous time stochastic processs used to descr
 
 Stock prices are considered to be a stochastic process beause they are subject to random fluctuations that are influenced by large number of uncontrollable factors (i.e. economic new, company performance, and investor sentiment). 
 
-As with any quantitive model used for informing investment decisions there are limitations. The Geometric Brownian Motion Model assumes that the volatility of the price process is constant over time, and that returns are normally distributed across the observed time interval. 
+As with any quantitive model used for informing investment decisions there are limitations. Of note, Geometric Brownian Motion Model has to following limiting assumptions:
+* Volatility of the price process is constant over time. 
+* Lack of mean reversion. The GBM model assumes that asset prices follow a random walk, which means that they move randomly in the absence of any other information.
+* Normality assumption. Which is in conflict with decades of empirical evidence that suggests asset returns often exhibit non-normal distributions, such as fat tails or skewness.
+* Lack of jumps. Assuming that prices change continuously over time with no sudden jumps or shocks caused by stock market crashes, flash crashes, or news-driven price spikes
 
-Even after considering the limitations of the model, it continues to provide a well defined picture of what to expect in terms of how a particular stock may behave in the financial markets.
+That being said even after considering the limitations of the model, it continues to provide a well defined starting point for modeling asset prices.
 
 ### The GBM model is expressed by the following stochastic differential equation:
 <p align="center">
