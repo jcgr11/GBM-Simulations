@@ -77,8 +77,6 @@ $$Z \approx N(0,1)$$
 
 The final equation is the discrete approximation to the original GBM SDE, using the Euler-Maruyama method. It tells us that the predicted stock price after a small time interval $dt$, $S(t + dt)$, can be obtained by multiplying the current stock price $S(t)$ by a random factor $\exp \left( (\mu - \frac{1}{2}\sigma^2) dt + \sigma \sqrt{dt} Z \right)$, where $Z$ is a standard normal random variable. This random factor captures the stochastic fluctuations in the stock price due to the Wiener process $dW(t)$.
 
-# The code:
-
 ## Setup:
 * Import necessary packages (see requirements file).
 * Define the security for which you would like to simulate price dynamics for. 
@@ -87,9 +85,10 @@ The final equation is the discrete approximation to the original GBM SDE, using 
 * specify the Adj Close column to account for an income accrual events in the price of the security (dividends, short term and long term capital gains, corp actions, etc.). adj_close = x['Adj Close']
 * Calculate the daily percentage change in adjusted close prices and drop the first row which contains null values. returns = adj_close.pct_change().dropna()
 
-## Setting up the model:
+### Preparing your data:
 * Split your returns dataframe into your training set and test set
 * Set up your Monte Carlo simulation parametes: Including the length of the test period (T), the number of time steps (N), the initial stock price (S_0), the number of simulations (N_SIM), and the mean (mu) and standard deviation (sigma) of the returns during the training period.
+
 ### The simulate_gbm function:
 * This function simulates the Geometric Brownian Motion (GBM) of the selcted security using a Monte Carlo simulation. The function input parameters are :
 * s_0: the initial stock price
@@ -105,7 +104,7 @@ Next, the simulate_gbm function uses NumPy's np.cumsum function to compute the c
 
 Finally, the function computes the simulated stock prices S_t at each time step by applying the GBM formula using the np.exp and np.insert functions to insert the initial stock price s_0 at the beginning of each row of the array. The function returns the simulated stock prices S_t.
 
-### Preparing and Vizualizing your results against to original mean return:
+### Refining and Vizualizing your results against to original mean return:
 * LAST_TRAIN_DATE = train.index[-1].date() - sets the variable LAST_TRAIN_DATE to the date of the last entry in the train DataFrame's index. train is a DataFrame containing historical data up until the last date of the training set.
 * FIRST_TEST_DATE = test.index[0].date() - sets the variable FIRST_TEST_DATE to the date of the first entry in the test DataFrame's index. test is a DataFrame containing historical data starting from the first date of the testing set.
 * LAST_TEST_DATE = test.index[-1].date() - sets the variable LAST_TEST_DATE to the date of the last entry in the test DataFrame's index.
