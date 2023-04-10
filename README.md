@@ -7,8 +7,11 @@ It should be emphasized that the model is not intended to predict the future mov
 * Geometric brownian motion. (n.d.). https://www.quantstart.com/articles/Geometric-Brownian-Motion/
 * Lewinson, E. (2022). Python for finance cookbook: Over 80 powerful recipes for effective financial data analysis. Packt Publishing.
 * K. (2013). Simulating brownian motion (bm) and Geometric Brownian motion (GBM). http://www.columbia.edu/~ks20/4404-Sigman/4404-Notes-sim-BM.pdf
-* Rouah, F. (n.d.). Euler and Milstein discretization - frouah.com. http://www.frouah.com/finance%20notes/Euler%20and%20Milstein%20Discretization.pdf
-* MIT OpenCourseWare. (n.d.). Lecture 21: Stochastic differential equations: Topics in mathematics with applications in finance: Mathematics. MIT OpenCourseWare. Retrieved April 4, 2023, from https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-21-stochastic-differential-equations/ 
+* Rouah, F. (2010). Euler and Milstein discretization - frouah.com. http://www.frouah.com/finance%20notes/Euler%20and%20Milstein%20Discretization.pdf
+* MIT OpenCourseWare. (2013). Lecture 21: Stochastic differential equations: Topics in mathematics with applications in finance: Mathematics. MIT OpenCourseWare. https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-21-stochastic-differential-equations/ 
+* Shreve, S. E. (2004). Stochastic Calculus for Finance II: Continuous-Time Models. Springer.
+* Wilmott, P., Howison, S., & Dewynne, J. N. (2013). The Mathematics of Financial Derivatives: A Student Introduction. Cambridge University Press.
+* Hull, J. C. (2017). Options, Futures, and Other Derivatives (10th ed.). Pearson Education.
 
 ## A breif description of Geometric brownian motion and the derived recursive form used in this model for estimating geometric borwnian motion in stock price path dynamics:
 ### Geometric brownian motion:
