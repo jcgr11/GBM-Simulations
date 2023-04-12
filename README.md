@@ -70,11 +70,11 @@ To obtain the recursive form, we need to solve the SDE. One way to do this is to
 Below are the steps of Euler-Maruyama Discretization:
 
 1. Discretize time into small intervals of length dt. We want to find the value of $S$ at time $t+dt$, given the value of $S$ at time $t$. We can write: $$S(t+dt) = S(t) + dS(t)$$
-2. Substitute the SDE for dS(t): $$S(t+dt) = S(t) + μS(t)dt + σS(t)dW(t)$$
+2. Substitute the SDE for $dS(t)$: $$S(t+dt) = S(t) + μS(t)dt + σS(t)dW(t)$$
 3. Approximate the increment $dW(t)$ using a normal distribution with mean $0$ and variance $dt$: $$dW(t) \approx N(0,dt)$$
 4. Define a standard normal random variable $Z$ as:
 $$Z \approx N(0,1)$$
-5. Rewrite the equation using $dW(t) = sqrt(dt)\cdot Z$: $$S(t+dt) = S(t) + μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$
+5. Rewrite the equation using $dW(t) = \sqrt(dt)\cdot Z$: $$S(t+dt) = S(t) + μS(t)dt + σS(t)\sqrt{dt}\cdot Z$$
 6. Use the fact that $Z$ is normally distributed to obtain: $$S(t+dt) = S(t) + μS(t)dt + σS(t)\sqrt{dt}\cdot Z \approx S(t)\cdot\left(1 + μdt + σ\sqrt{dt}\cdot Z\right)$$
 7. Finally, exponentiate both sides of the equation to obtain the recursive form of the GBM: $$S(t+dt)=S(t)\cdot\exp\left((\mu-\frac{1}{2}\sigma^2)dt+\sigma\sqrt{dt}\cdot Z\right)$$
 
