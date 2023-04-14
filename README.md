@@ -41,7 +41,7 @@ where:
 
 In this case $W(t)$ is simulated using a simple Monte Carlo simulation by generating a series normally distributed random numbers which are used to update the state of the stochastic process at each time step. Although not an exact wiener process, the simulation will have similar properties such as a continuous and unpredictable path at each time step.
 
-### The derivation of the recursive form of the GBM SDE (shown below) using Euler-Maruyama's Discretization:
+### Using Euler-Maruyama's discretization, we can derive the recursive form of the GBM SDE. This recursive form is as follows:
 <p align="center">
 $$S(t+dt)=S(t)\cdot\exp\left((\mu-\frac{1}{2}\sigma^2)dt+\sigma\sqrt{dt}\cdot Z\right)$$
 </p>
@@ -60,7 +60,7 @@ and:
 and:
 * $\sigma\sqrt{dt}\cdot Z$  represents the random component of the log price change.
 
-### Deriving the Recursive Form of the Geometric Brownian Motion SDE using the Euler-Maruyama Discretization method:
+## Deriving the Recursive Form of the Geometric Brownian Motion SDE using the Euler-Maruyama Discretization method:
 
 We start with the original stochastic differential equation $$dS(t) = μS(t)dt + σS(t)dW(t)$$
 where (as mentioned above) $S(t)$ is the stock price at time $t$, $\mu$ is the drift rate (the expected rate of return), $\sigma$ is the volatility (the standard deviation of the rate of return), $W(t)$ is a standard Brownian motion (a stochastic process with independent and normally distributed increments), and $dt$ is an infinitesimal time step.
