@@ -1,5 +1,5 @@
 # Monte Carlo simulation for stock price dynamics using a recursive form of the Geometric Brownian Motion SDE
-The aim of this project is to develop a quantitative model that can measure and visualize the inherent uncertainty and randomness in the movement of stock prices. By attempting to replicate the potential fluctuations of a prticular security, the model provides valuable insights that can assist in evaluating the behavior of the chosen security and forming well-supported hypotheses around future actions that could be taken.
+The aim of this project is to develop a quantitative model that can measure and visualize the inherent uncertainty and randomness in the movement of stock prices. By attempting to replicate the potential fluctuations of a particular security, the model provides valuable insights that can assist in evaluating the behavior of the chosen security and forming well-supported hypotheses around future actions that could be taken.
 
 It should be emphasized that the model is not intended to predict the future movement of stock prices with complete accuracy, but rather to provide probabilistic estimates that can inform decision-making. As with any quantitative model, the accuracy of the output is subject to the quality and quantity of the input data, as well as the assumptions and limitations of the model itself. Therefore, it is important to approach the model's outputs with a healthy degree of skepticism and critical thinking, and to use it in combination with other sources of information and expertise.
 
@@ -13,14 +13,14 @@ It should be emphasized that the model is not intended to predict the future mov
 * Wilmott, P., Howison, S., & Dewynne, J. N. (2013). The Mathematics of Financial Derivatives: A Student Introduction. Cambridge University Press.
 * Hull, J. C. (2017). Options, Futures, and Other Derivatives (10th ed.). Pearson Education.
 
-## A breif description of Geometric brownian motion and the derived recursive form used in this model for estimating geometric borwnian motion in stock price path dynamics:
-### Geometric brownian motion:
+## A brief description of Geometric Brownian motion and the derived recursive form used in this model for estimating geometric Brownian motion in stock price path dynamics:
+### Geometric Brownian motion:
 
-Geometric Brownian Motion is a continuous time stochastic processs used to describe the stochastic movement of stock prices. 
+Geometric Brownian Motion is a continuous time stochastic process used to describe the stochastic movement of stock prices. 
 
-Stock prices are considered to be a stochastic process beause they are subject to random fluctuations that are influenced by large number of uncontrollable factors (i.e. economic new, company performance, and investor sentiment). 
+Stock prices are considered to be a stochastic process because they are subject to random fluctuations that are influenced by large number of uncontrollable factors (i.e. economic new, company performance, and investor sentiment). 
 
-As with any quantitive model used for informing investment decisions there are limitations. Of note, Geometric Brownian Motion Model has to following limiting assumptions:
+As with any quantitative model used for informing investment decisions there are limitations. Of note, Geometric Brownian Motion Model has to following limiting assumptions:
 * Volatility of the price process is constant over time. 
 * Lack of mean reversion. The GBM model assumes that asset prices follow a random walk, which means that they move randomly in the absence of any other information.
 * Normality assumption. Which is in conflict with decades of empirical evidence that suggests asset returns often exhibit non-normal distributions, such as fat tails or skewness.
@@ -39,7 +39,7 @@ where:
 * $σ$, (diffusion), is the volatility of the asset
 * $W(t)$ is a Wiener process, which is a mathematical representation of Brownian motion
 
-In this case $W(t)$ is simulated using using a simple Monte Carlo simulation by generating a series normally distrubted random numbers which are used to update the state of the stochastic process at each time step. Although not an exact weiner process, the simulation will have similar properties such as a continuous and unpredicatable path at each time step.
+In this case $W(t)$ is simulated using a simple Monte Carlo simulation by generating a series normally distributed random numbers which are used to update the state of the stochastic process at each time step. Although not an exact wiener process, the simulation will have similar properties such as a continuous and unpredictable path at each time step.
 
 ### The derivation of the recursive form of the GBM SDE (shown below) using Euler-Maruyama's Discretization:
 <p align="center">
@@ -60,7 +60,7 @@ and:
 and:
 * $\sigma\sqrt{dt}\cdot Z$  represents the random component of the log price change.
 
-### Deriving the Recursive Form of Geometric Brownian Motion using the Euler-Maruyama Discretization method:
+### Deriving the Recursive Form of the Geometric Brownian Motion SDE using the Euler-Maruyama Discretization method:
 
 We start with the original stochastic differential equation $$dS(t) = μS(t)dt + σS(t)dW(t)$$
 where (as mentioned above) $S(t)$ is the stock price at time $t$, $\mu$ is the drift rate (the expected rate of return), $\sigma$ is the volatility (the standard deviation of the rate of return), $W(t)$ is a standard Brownian motion (a stochastic process with independent and normally distributed increments), and $dt$ is an infinitesimal time step.
@@ -107,7 +107,7 @@ Next, the simulate_gbm function uses NumPy's np.cumsum function to compute the c
 
 Finally, the function computes the simulated stock prices S_t at each time step by applying the GBM formula using the np.exp and np.insert functions to insert the initial stock price s_0 at the beginning of each row of the array. The function returns the simulated stock prices S_t.
 
-### Refining and Vizualizing your results against to original mean return:
+### Refining and Visualizing your results against to original mean return:
 * LAST_TRAIN_DATE = train.index[-1].date() - sets the variable LAST_TRAIN_DATE to the date of the last entry in the train DataFrame's index. train is a DataFrame containing historical data up until the last date of the training set.
 * FIRST_TEST_DATE = test.index[0].date() - sets the variable FIRST_TEST_DATE to the date of the first entry in the test DataFrame's index. test is a DataFrame containing historical data starting from the first date of the testing set.
 * LAST_TEST_DATE = test.index[-1].date() - sets the variable LAST_TEST_DATE to the date of the last entry in the test DataFrame's index.
