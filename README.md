@@ -3,16 +3,6 @@ The goal of this project is to develop a quantitative model that can measure and
 
 It should be emphasized that the model is not intended to predict the future movement of stock prices with complete accuracy nor does it give us an exact estimate of whether the security is over/under valued, but rather to provide probabilistic estimates that can inform decision-making and visualize the mean price based on $n$ simulations. As with any quantitative model, the accuracy of the output is subject to the quality and quantity of the input data, as well as the assumptions and limitations of the model itself. Therefore, it is important to approach the model's outputs with a healthy degree of skepticism and critical thinking, and to use it in combination with other sources of information and supporting models.
 
-## References:
-* Geometric brownian motion. (n.d.). https://www.quantstart.com/articles/Geometric-Brownian-Motion/
-* Lewinson, E. (2022). Python for finance cookbook: Over 80 powerful recipes for effective financial data analysis. Packt Publishing.
-* K. (2013). Simulating brownian motion (bm) and Geometric Brownian motion (GBM). http://www.columbia.edu/~ks20/4404-Sigman/4404-Notes-sim-BM.pdf
-* Rouah, F. (2010). Euler and Milstein discretization - frouah.com. http://www.frouah.com/finance%20notes/Euler%20and%20Milstein%20Discretization.pdf
-* MIT OpenCourseWare. (2013). Lecture 21: Stochastic differential equations: Topics in mathematics with applications in finance: Mathematics. MIT OpenCourseWare. https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-21-stochastic-differential-equations/ 
-* Shreve, S. E. (2004). Stochastic Calculus for Finance II: Continuous-Time Models. Springer.
-* Wilmott, P., Howison, S., & Dewynne, J. N. (2013). The Mathematics of Financial Derivatives: A Student Introduction. Cambridge University Press.
-* Hull, J. C. (2017). Options, Futures, and Other Derivatives (10th ed.). Pearson Education.
-
 ## A brief description of Geometric Brownian motion and the derived recursive form used in this model for estimating geometric Brownian motion in stock price path dynamics:
 ### Geometric Brownian motion:
 
@@ -119,3 +109,13 @@ Finally, the function computes the simulated stock prices S_t at each time step 
 * The set_title function sets the plot title to PLOT_TITLE.
 * The legend function adds a legend to the plot, with line_1 labeled as 'Simulated Mean' and line_2 labeled as 'Actual Price Path'.
 * The plot is then displayed using plt.show().
+
+## References:
+* Geometric brownian motion. (n.d.). https://www.quantstart.com/articles/Geometric-Brownian-Motion/
+* Lewinson, E. (2022). Python for finance cookbook: Over 80 powerful recipes for effective financial data analysis. Packt Publishing.
+* K. (2013). Simulating brownian motion (bm) and Geometric Brownian motion (GBM). http://www.columbia.edu/~ks20/4404-Sigman/4404-Notes-sim-BM.pdf
+* Rouah, F. (2010). Euler and Milstein discretization - frouah.com. http://www.frouah.com/finance%20notes/Euler%20and%20Milstein%20Discretization.pdf
+* MIT OpenCourseWare. (2013). Lecture 21: Stochastic differential equations: Topics in mathematics with applications in finance: Mathematics. MIT OpenCourseWare. https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-21-stochastic-differential-equations/ 
+* Shreve, S. E. (2004). Stochastic Calculus for Finance II: Continuous-Time Models. Springer.
+* Wilmott, P., Howison, S., & Dewynne, J. N. (2013). The Mathematics of Financial Derivatives: A Student Introduction. Cambridge University Press.
+* Hull, J. C. (2017). Options, Futures, and Other Derivatives (10th ed.). Pearson Education.
